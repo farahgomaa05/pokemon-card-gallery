@@ -26,8 +26,12 @@ SECRET_KEY = 'django-insecure-78vsn2$*b&hl1njo&7fxt)6q%w_l+c@nh+)w=xyo_4rj_q&hzt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["localhost",
+    "127.0.0.1",
+    "pokemon-card-gallery.onrender.com",  # ✅ Add your live Render domain
+    ]
+# OR: better for deployment
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
 # Application definition
 
