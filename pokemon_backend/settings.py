@@ -66,6 +66,14 @@ CORS_ALLOW_ALL_ORIGINS = True  # For testing; restrict later in production
 
 ROOT_URLCONF = 'pokemon_backend.urls'
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/tmp/django_cache',
+    }
+}
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
